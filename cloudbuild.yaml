@@ -17,6 +17,12 @@ steps:
       - 'us-central1'
       - '--platform'
       - 'managed'
+      - '--allow-unauthenticated'
+      - '--set-env-vars'
+      - 'MLFLOW_TRACKING_URI=$_MLFLOW_SERVER'
 
 images:
   - 'us-central1-docker.pkg.dev/$PROJECT_ID/purchased-docker/purchase_predict_api:$SHORT_SHA'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
